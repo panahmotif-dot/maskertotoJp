@@ -1597,32 +1597,53 @@ h1{color:#fff0d0;text-shadow:0 2px 14px rgba(230,165,46,.22)}
   }
 }
 </style>
-<style id="final-header-fix">
-/* HEADER SOLID — ANTI TEMBUS */
-html body header.top {
+<style id="header-watermark-fix">
+
+/* HEADER DASAR */
+html body .top {
     position: sticky !important;
     top: 0 !important;
     z-index: 999999 !important;
+    isolation: isolate !important;
 
     background: #100608 !important;
-    background-color: #100608 !important;
     background-image: none !important;
 
-    opacity: 1 !important;
-    filter: none !important;
-
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-
-    isolation: isolate;
+    border-bottom: 1px solid rgba(230,165,46,.4);
+    overflow: hidden;
 }
 
-/* Pastikan area logo dan tombol juga solid */
-html body header.top .topbar {
+/* LOGO BESAR DI BELAKANG HEADER */
+html body .top::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+
+    background-image: url("https://maskertoto04.com/images/logo.png?v=1793380983");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 95% auto;
+
+    opacity: .18;
+    pointer-events: none;
+}
+
+/* LOGO UTAMA DAN TOMBOL */
+html body .top .topbar {
     position: relative;
-    z-index: 1;
-    background: #100608 !important;
+    z-index: 2;
+
+    background: transparent !important;
+    background-color: transparent !important;
 }
+
+/* LOGO UTAMA TETAP JELAS */
+html body .top .logo {
+    position: relative;
+    z-index: 3;
+}
+
 </style>
 </head>
 <body>
